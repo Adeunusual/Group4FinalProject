@@ -8,5 +8,6 @@ namespace GhostHunter.SceneClasses
 {
     internal class GameOverScene
     {
+        //test for Github
     }
 }
