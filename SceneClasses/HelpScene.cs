@@ -1,12 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+ * HelpScene.cs
+ * 
+ * Description: Displays the help page with instructions and controls for the player.
+ * 
+ * Revision History:
+ * Chiayin Yang : 24th November, 2024 - "Added HelpScene and Coin classes with basic structure."
+ */
+
+using Microsoft.Xna.Framework;
 
 namespace GhostHunter
 {
-    internal class HelpScene
+    public class HelpScene : GameScene
     {
+        public HelpScene(Game1 game) : base(game)
+        {
+        }
+
+        public override void LoadContent()
+        {
+        }
+
+        public override void Draw(GameTime gameTime)
+        {
+        }
     }
 }
+
