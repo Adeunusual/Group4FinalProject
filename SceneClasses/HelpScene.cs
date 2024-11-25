@@ -10,12 +10,12 @@
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Xml.Linq;
 
 namespace GhostHunter
 {
     public class HelpScene : GameScene
     {
+        private Texture2D HelpSceneImage; // Texture for the HelpScene image
         public HelpScene(Game1 game) : base(game)
         {
         }
