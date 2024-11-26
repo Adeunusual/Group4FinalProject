@@ -7,7 +7,8 @@ namespace GhostHunter
     public class Game1 : Game
     {
         private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+        public SpriteBatch SpriteBatch;
+        private GameScene _currentScene; // Reference to the active scene
 
         public Game1()
         {
@@ -25,7 +26,7 @@ namespace GhostHunter
 
         protected override void LoadContent()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+            SpriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
         }
@@ -44,6 +45,7 @@ namespace GhostHunter
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            _currentScene.Draw(gameTime);
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
