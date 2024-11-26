@@ -7,7 +7,7 @@ namespace GhostHunter
     public class Game1 : Game
     {
         private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+        public SpriteBatch SpriteBatch;
 
         public Game1()
         {
@@ -25,7 +25,7 @@ namespace GhostHunter
 
         protected override void LoadContent()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+            SpriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
         }
