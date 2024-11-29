@@ -4,7 +4,7 @@
 * Description: This file manages the "About" scene, displaying information about the game and its developers, including a visual image.
 *
 * Revision History:
-* Maria Fernanda: 15th, November, 2024 - Implemented loading and rendering the About image.
+* Maria Fernanda: 23th, November, 2024 - Implemented loading and rendering the About image.
 */
 
 using Microsoft.Xna.Framework;

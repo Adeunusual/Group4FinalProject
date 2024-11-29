@@ -45,7 +45,6 @@ namespace GhostHunter
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            _currentScene.Draw(gameTime);
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
