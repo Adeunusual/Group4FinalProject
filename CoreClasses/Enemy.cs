@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+* Enemy.cs
+* 
+* Description: This class manages enemy properties, movement logic, and patrolling behavior within the maze.
+*
+* Revision History:
+* Maria Fernanda: 28th, November, 2024 - Created enemy movement logic and patrolling behavior.
+* 
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

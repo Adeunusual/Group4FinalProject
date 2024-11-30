@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace GhostHunter
 {
@@ -26,6 +27,7 @@ namespace GhostHunter
     public abstract class GameScene
     {
         protected Game1 _game; // Reference to the main game (Game1)
+        private List<Enemy> enemies;
 
         // Constructor that initializes the game instance
         public GameScene(Game1 game)
@@ -40,7 +42,16 @@ namespace GhostHunter
         */
         public virtual void LoadContent()
         {
+            enemies = new List<Enemy>();
+
+            //add enemies depending on the coins count
+           
+               // enemies.Add(new Enemy(_game.Content.Load<Texture2D>("sprite_1"), coinPosition, enemySpeed, maze, moveHorizontally));
+            
+
+        
         }
+
 
         /*
          * Update the logic for this scene (e.g., user input, animations).
@@ -50,6 +61,12 @@ namespace GhostHunter
         */
         public virtual void Update(GameTime gameTime)
         {
+            // Update enemies
+            foreach (var enemy in enemies)
+            {
+                enemy.Update(gameTime);
+            }
+
         }
 
         /*
