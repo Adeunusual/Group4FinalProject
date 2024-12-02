@@ -41,6 +41,8 @@ namespace GhostHunter
 			return coinCollected;
 		}
 
+
+
 		// Check collisions between player and list of enemies
 		public static bool CheckEnemyCollisions(Player player, List<Enemy> enemies)
 		{
