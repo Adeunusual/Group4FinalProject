@@ -12,12 +12,11 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Audio;
-using System.Xml.Linq;
 
 namespace GhostHunter
 {
-    public class StartMenuScene : GameScene
-    {
+	public class StartMenuScene : GameScene
+	{
 		//declaration of variables
 		private SpriteFont highlightFont; // Font for the heading
 		private SpriteFont normalFont; // Font for the menu options
@@ -30,10 +29,9 @@ namespace GhostHunter
 		private KeyboardState previousKeyboardState; // Tracks the previous keyboard state
 
 		public StartMenuScene(Game1 game) : base(game)
-        {
-        }
+		{
+		}
 
-		// Load content specific to the Start Menu Scene
 		// Load content specific to the Start Menu Scene
 		public override void LoadContent()
 		{
@@ -99,13 +97,14 @@ namespace GhostHunter
 						break;
 				}
 			}
+
 			// Save the current keyboard state for the next update cycle
 			previousKeyboardState = keyboardState;
 		}
 
 		// Draw method to display the menu and background
 		public override void Draw(GameTime gameTime)
-        {
+		{
 			_game.SpriteBatch.Begin(); // Begin drawing
 
 			// Draw the background image at the origin (top-left corner)
@@ -142,5 +141,5 @@ namespace GhostHunter
 
 			_game.SpriteBatch.End(); // End drawing
 		}
-    }
+	}
 }

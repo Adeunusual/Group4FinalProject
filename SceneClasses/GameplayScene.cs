@@ -15,8 +15,9 @@ using System.Collections.Generic;
 
 namespace GhostHunter
 {
-    public class GamePlayScene : GameScene
-    {
+	public class GamePlayScene : GameScene
+	{
+
 		//declartion of variables
 		private string difficultyLevel;
 		private Player player;
@@ -61,7 +62,7 @@ namespace GhostHunter
 		private Random random;
 
 		public GamePlayScene(Game1 game, string level) : base(game)
-        {
+		{
 			difficultyLevel = level;
 			random = new Random();
 		}
@@ -246,10 +247,53 @@ namespace GhostHunter
 			return false;
 		}
 		public override void Draw(GameTime gameTime)
-        {
-            _game.SpriteBatch.Begin();
+		{
+			_game.SpriteBatch.Begin();
 
-            _game.SpriteBatch.End();
-        }
-    }
+			int tileWidth = 32;  // Tile size
+			int tileHeight = 32; // Tile size
+
+			// Draw the maze
+			for (int row = 0; row < maze.GetLength(0); row++)
+			{
+				for (int col = 0; col < maze.GetLength(1); col++)
+				{
+					Vector2 position = new Vector2(col * tileWidth, row * tileHeight);
+
+					// Draw the path texture (use the path texture to carve out paths in the maze)
+					if (maze[row, col] == 0)
+					{
+						_game.SpriteBatch.Draw(pathTexture, new Rectangle((int)position.X, (int)position.Y, tileWidth, tileHeight), Color.White);
+					}
+					// Draw the wall texture (draw walls everywhere else)
+					else
+					{
+						_game.SpriteBatch.Draw(wallTexture, new Rectangle((int)position.X, (int)position.Y, tileWidth, tileHeight), Color.White);
+					}
+				}
+			}
+
+			// Draw player
+			player.Draw(_game.SpriteBatch);
+
+			// Draw enemies
+			foreach (var enemy in enemies)
+			{
+				enemy.Draw(_game.SpriteBatch);
+			}
+
+			// Draw coins
+			foreach (var coin in coins)
+			{
+				coin.Draw(_game.SpriteBatch);
+			}
+
+			// Draw UI - Lives and Timer
+			_game.SpriteBatch.DrawString(normalFont, "Lives: " + playerLives, new Vector2(10, 10), Color.White);
+			_game.SpriteBatch.DrawString(normalFont, "Time: " + (int)countdownTimer, new Vector2(10, 40), Color.White);
+			_game.SpriteBatch.DrawString(normalFont, "Score: " + coinsCollected, new Vector2(10, 70), Color.White);
+
+			_game.SpriteBatch.End();
+		}
+	}
 }
