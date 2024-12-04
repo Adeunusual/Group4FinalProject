@@ -49,7 +49,10 @@ namespace GhostHunter
 				if (_game.HighScores.ContainsKey(difficultyLevel) && _game.HighScores[difficultyLevel] > timeUsed)
 				{
 					_game.HighScores[difficultyLevel] = timeUsed;
-				}
+
+                    // Save new high scores to file
+                    _game.ScoresScene.SaveHighScores();
+                }
 			}
 		}
 

@@ -20,6 +20,8 @@ namespace GhostHunter
         private GraphicsDeviceManager _graphics;
         public SpriteBatch SpriteBatch; // Shared SpriteBatch for drawing across scenes
         private GameScene _currentScene; // Reference to the active scene
+
+        public ScoresScene ScoresScene { get; private set; } // Added this line to hold the reference
         public Dictionary<string, float> HighScores { get; private set; } // High scores for different levels (Easy, Medium, Hard)
 
         // Constructor for initializing the main game components
@@ -43,6 +45,9 @@ namespace GhostHunter
         {
             // Initialize the first scene to be the Start Menu
             _currentScene = new StartMenuScene(this);
+
+            // Initialize ScoresScene instance
+            ScoresScene = new ScoresScene(this);
 
             base.Initialize();
         }
